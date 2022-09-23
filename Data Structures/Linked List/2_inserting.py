@@ -7,7 +7,6 @@ class LinkedList:
         curr_node = head
         while True:
             try:
-                # print(node_index,index,curr_node.data)
                 if index == 1:
                     new_node = Node(element) # Creating a new node 
                     new_node.next = curr_node # Assigning new node next as curr_node since the index is 1 so new_node.next is head node

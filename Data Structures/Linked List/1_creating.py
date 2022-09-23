@@ -1,5 +1,5 @@
 class LinkedList:
-    def display(self,head):#Displaying the node
+    def display(self,head):#Displaying the elements in linkedlist
         while True:
             try:
                 print(head.data)
@@ -12,7 +12,7 @@ class LinkedList:
         try:
             curr_node = Node(arr[0])
             head = curr_node
-        except IndexError:# If n is 0 then assign first_node to None
+        except IndexError:# If n is 0 then assign head to None
             head = None
         for i in range(1,n):
             curr_node.next = Node(arr[i])
