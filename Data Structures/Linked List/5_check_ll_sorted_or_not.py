@@ -26,7 +26,7 @@ class LinkedList:
         while head:
             print(head.data)
             head = head.next
-    def check_sorted_or_not(self,head):
+    def checkSortedOrNot(self,head):
         min = -1
         while head:
             ele = head.data
@@ -38,4 +38,4 @@ class LinkedList:
         return True
 linked_list = LinkedList()
 head = linked_list.creation()
-print(linked_list.check_sorted_or_not(head))
+print(linked_list.checkSortedOrNot(head))
