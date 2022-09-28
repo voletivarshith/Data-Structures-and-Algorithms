@@ -43,15 +43,12 @@ class LinkedList:
         first_node = head
         second_node = None
         third_node = None
-        while True:
-            try:
-                third_node = second_node
-                second_node = first_node
-                first_node = first_node.next
-                second_node.next = third_node
-            except AttributeError:
-                break
-        return third_node
+        while first_node:
+            third_node = second_node
+            second_node = first_node
+            first_node = first_node.next
+            second_node.next = third_node
+        return second_node
 linked_list = LinkedList()
 head = linked_list.creation()
 linked_list.display(linked_list.reverseLinkedList(head))
