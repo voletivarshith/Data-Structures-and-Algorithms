@@ -16,16 +16,25 @@ class LinkedList:
             first_node = first_node.next
         first_node.next = head
         return head
-    def insertion(self,first_node,pos,ele):
+    def insertion(self,curr_node,pos,ele):
         flag = 0
         if pos==1:
             temp = Node(ele)
-            temp.next = first_node
+            temp.next = curr_node
             head = temp
-            while temp.next!=first_node or flag == 0:
+            while temp.next!=curr_node or flag == 0:
                 flag = 1
                 temp = temp.next
             temp.next = head
+        else:
+            head = curr_node
+            for i in range(pos-1):
+                prev_node = curr_node
+                curr_node = curr_node.next
+            new_node = Node(ele)
+            temp = prev_node.next
+            prev_node.next = new_node
+            new_node.next = temp
         return head
     def display(self,head):
         temp = head
