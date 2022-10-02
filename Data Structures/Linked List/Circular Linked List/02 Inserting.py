@@ -25,7 +25,7 @@ class LinkedList:
         first_node.next = head
         return head
     def insertion(self,head):
-        pos = int(input("Enter the position of an element to be inserted: "))# Position can be 1 <= pos <= n
+        pos = int(input("Enter the position of an element to be inserted: "))# Position can be 0 <= pos <= n
         ele = int(input("Enter the element to be inserted: "))
         node_to_be_inserted = Node(ele)# Create a node that is to be inserted
         if head==None:
