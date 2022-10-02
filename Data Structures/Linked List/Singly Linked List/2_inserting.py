@@ -3,26 +3,15 @@ class LinkedList:
         # Assuming the index starts from 1
         # So if index is 1 then inserting the node at first
         # If index is n+1 then inserting the node at last
-        node_index = 1
         curr_node = head
-        while True:
-            try:
-                if index == 1:
-                    new_node = Node(element) # Creating a new node 
-                    new_node.next = curr_node # Assigning new node next as curr_node since the index is 1 so new_node.next is head node
-                    head = new_node # Reassiging head node to new_node
-                    break
-                if node_index==index:
-                    new_node = Node(element) # Creating a new node
-                    prev_node.next = new_node # Assigning the previous node next to the new node
-                    new_node.next = curr_node # Assigning the new_node next to the current_node
-                    break
-                else:
-                    prev_node = curr_node
-                    curr_node = curr_node.next  
-                node_index = node_index + 1
-            except AttributeError:
-                break
+        new_node = Node(element) # Creating a new node 
+        if index == 0:
+            new_node.next = curr_node # Assigning new node next as curr_node since the index is 1 so new_node.next is head node
+            return new_node # Reassiging head node to new_node
+        for i in range(index-1):
+            curr_node = curr_node.next
+        new_node.next = curr_node.next
+        curr_node.next = new_node
         return head
     def display(self,head):
         while True:
@@ -49,7 +38,7 @@ class Node:
         self.next = next
 linked_list = LinkedList()
 head = linked_list.creating()
-index = int(input("Enter the index to be inserted: ")) # The index should be between index>=1 and index<=n+1
+index = int(input("Enter the index to be inserted: ")) # The index should be between 1<=index<=n
 element = int(input("Enter the element to be inserted: "))
 head = linked_list.inserting(head,index,element)
 linked_list.display(head)

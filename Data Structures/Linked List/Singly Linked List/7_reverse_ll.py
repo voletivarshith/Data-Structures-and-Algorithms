@@ -2,7 +2,7 @@
 """
 This can be done in 2 ways the
 1st Way is Reversing the address
-2nd way is removing the second node and placing at first(this method is done in leetcode problems 206_reverse_a_linked_list)
+2nd way is removing the second node and placing at first(check leetcode problems 0206 reverse a linked list)
 Approch 
 declare 3 pointers
 first node is pointing to first node
