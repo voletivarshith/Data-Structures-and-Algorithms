@@ -22,10 +22,14 @@ class LinkedList:
         for i in range(1,n):
             first_node.next = Node(arr[i])
             first_node = first_node.next
+            
         first_node.next = head
         return head
     def display(self,head):
         temp = head
+        if temp==None:
+            print(None)
+            return
         while temp.next!=head:
             print(temp.data)
             temp = temp.next
@@ -37,6 +41,8 @@ class LinkedList:
             temp = temp.next # change the temp variable to the next position since the first_node is to be deleted
             temp1 = head # Assign the temp1 as the head node to delete the first_node
             head = head.next # Traverse the head node to the next node since we need to delete the first node
+            if head==temp1:
+                return None
             while temp.next!=temp1: # Here we are checking the last node i.e last node points to the first node so we are checking the last node
                 temp = temp.next # Traversing
             temp.next = head # Finally temp points to the last node so reassign the temp.next to the head node(head node points to the 2nd node in the linked list) and we have removed the 1st node from the list
